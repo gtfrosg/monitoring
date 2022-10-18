@@ -65,6 +65,9 @@ $menu = [
         'can' => 'admin',
     ],
     [
+        'text' => 'Letras',
+        'url' => '/letras',
+    ],
         'text' => 'Proaluno GH',
         'url' => '/histgeo',
         'can' => '',
