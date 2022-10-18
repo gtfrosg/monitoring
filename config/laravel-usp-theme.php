@@ -64,6 +64,14 @@ $menu = [
         'submenu' => $admin,
         'can' => 'admin',
     ],
+    [
+        'text' => 'Letras',
+        'url' => '/letras',
+    ],
+    [
+        'text' => 'Proaluno GH',
+        'url' => '/histgeo',
+    ],
 ];
 
 $right_menu = [
