@@ -64,6 +64,11 @@ $menu = [
         'submenu' => $admin,
         'can' => 'admin',
     ],
+    [
+        'text' => 'Letras',
+        'url' => '/letras',
+        'can' => '',
+    ],
 ];
 
 $right_menu = [
