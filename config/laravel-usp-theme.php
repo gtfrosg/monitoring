@@ -65,16 +65,55 @@ $menu = [
         'can' => 'admin',
     ],
     [
-        'text' => 'Letras',
+        'text' => 'Equipamentos',
+        'can' => 'admin',
+
+        'submenu' => [
+            [
+                'text' => 'Cadastrar equipamento',
+                'url'  => '/equipamentos/create',
+                'can' => 'admin', 
+            ],
+            [
+                'type' => 'divider',
+            ],
+            [
+                'text' => 'Equipamentos cadastrados',
+                'url'  => '/equipamentos',
+                'can' => 'admin', 
+            ],
+        ],
+    ],
+    [
+        'text' => 'Salas',
+        'can' => 'admin',
+
+        'submenu' => [
+            [
+                'text' => 'Cadastrar sala',
+                'url'  => '/salas/create',
+                'can' => 'admin', 
+            ],
+            [
+                'type' => 'divider',
+            ],
+            [
+                'text' => 'Salas cadastradas',
+                'url'  => '/salas',
+                'can' => 'admin', 
+            ],
+        ]
+    ],
+    [
+        'text' => ' proaluno Letras',
         'url' => '/letras',
     ],
     [
         'text' => 'Proaluno Geografia e História',
         'url' => '/histgeo',
     ],
-
     [
-        'text' => 'Proaluno ciências sociais',
+        'text' => 'Proaluno Filosofia e ciências sociais',
         'url' => '/sociais',
     ],
 ];
