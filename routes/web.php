@@ -26,6 +26,9 @@ Route::get('salas', [SalaController::class, 'index']);
 Route::delete('salas/{sala}', [SalaController::class, 'destroy']);
 
 Route::get('/', [IndexController::class,'index']);
+
 Route::resource('letras', LetrasController::class);
+
 Route::resource('histgeo', HistgeoController::class);
+
 Route::resource('/sociais', SociaisController::class);
