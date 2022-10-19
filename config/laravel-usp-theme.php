@@ -65,12 +65,17 @@ $menu = [
         'can' => 'admin',
     ],
     [
-        'text' => 'Letras',
+        'text' => 'Proaluno Letras',
         'url' => '/letras',
     ],
     [
-        'text' => 'Proaluno GH',
+        'text' => 'Proaluno Geografia e História',
         'url' => '/histgeo',
+    ],
+
+    [
+        'text' => 'Proaluno ciências sociais',
+        'url' => '/sociais',
     ],
 ];
 
