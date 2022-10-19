@@ -65,7 +65,7 @@ $menu = [
         'can' => 'admin',
     ],
     [
-        'text' => 'Proaluno Letras',
+        'text' => 'Letras',
         'url' => '/letras',
     ],
     [
