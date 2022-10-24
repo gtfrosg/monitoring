@@ -105,12 +105,16 @@ $menu = [
         ]
     ],
     [
-        'text' => 'Letras',
+        'text' => ' proaluno Letras',
         'url' => '/letras',
     ],
     [
-        'text' => 'Proaluno GH',
+        'text' => 'Proaluno Geografia e História',
         'url' => '/histgeo',
+    ],
+    [
+        'text' => 'Proaluno Filosofia e ciências sociais',
+        'url' => '/sociais',
     ],
 ];
 
