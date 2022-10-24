@@ -19,8 +19,8 @@
     @forelse($equipamentos as $equipamento)
       <tr>
         <td><a href="/equipamentos/{{ $equipamento->id }}">{{ $equipamento->hostname }}</a></td>
-        <td>{{ $equipamento->mesa }}</td>
-        <td>{{ $equipamento->posicao }}</td>
+        <td>{{ $equipamento->mesa ? $equipamento->mesa : 'Sem mesa' }}</td>
+        <td>{{ $equipamento->posicao ? $equipamento->posicao : 'Sem posição'}}</td>
         <td> {{ $equipamento->sala_id ? $equipamento->sala->nome : 'Sem sala cadastrada' }}</td>
         <td align="center">
         <a href="/equipamentos/{{$equipamento->id}}/edit"><i class="fas fa-pencil-alt" color="#007bff"></i></a>
