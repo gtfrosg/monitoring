@@ -16,7 +16,7 @@ class EquipamentoController extends Controller
     public function index()
 {
 
-    $equipamentos = Equipamento::with('sala')->paginate(5);
+    $equipamentos = Equipamento::paginate(5);
     
     return view('equipamentos.index',[
         'equipamentos' => $equipamentos,
