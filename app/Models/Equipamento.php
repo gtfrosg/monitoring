@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Sala;
 
 class Equipamento extends Model
 {
@@ -15,4 +16,8 @@ class Equipamento extends Model
         'posicao',
         'sala_id'
     ];
+
+    public function sala(){
+        return $this->belongsTo(Sala::class);
+    }
 }

@@ -15,10 +15,11 @@ class EquipamentoController extends Controller
      */
     public function index()
 {
-    $equipamentos =  Equipamento::all();
+
+    $equipamentos = Equipamento::paginate(5);
+    
     return view('equipamentos.index',[
         'equipamentos' => $equipamentos,
-        'salas' => Sala::all()
     ]);
 }
 
@@ -43,8 +44,7 @@ public function store(EquipamentoRequest $request)
 public function show(Equipamento $equipamento)
 {
     return view('equipamentos.show',[
-        'equipamento' => $equipamento,
-        'salas' => Sala::all()
+        'equipamento' => $equipamento->load('sala')
     ]);
 }
 

@@ -27,7 +27,7 @@ class StatusRequest extends FormRequest
         $rules = [
             'username' => 'required',
             'login_at' => 'required',
-            'equipamento_id' => 'required'
+            'hostname' => 'required'
         ];
        
         return $rules;

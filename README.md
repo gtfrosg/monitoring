@@ -5,7 +5,6 @@
      -d '{
             "username": "123456",
             "hostname": "linux008029845",
-            "login_at": "2010-09-20 12:15",
-            "equipamento_id": "1"
+            "login_at": "2010-09-20 12:15"
           }'              
 ```
