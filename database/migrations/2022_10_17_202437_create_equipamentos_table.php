@@ -18,8 +18,8 @@ class CreateEquipamentosTable extends Migration
             $table->timestamps();
 
             $table->string('hostname');
-            $table->string('mesa');
-            $table->string('posicao');
+            $table->string('mesa')->nullable();
+            $table->string('posicao')->nullable();
 
             $table->unsignedBigInteger('sala_id')->nullable();
             $table->foreign('sala_id')->references('id')->on('salas');

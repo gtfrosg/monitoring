@@ -18,24 +18,21 @@ class StatusController extends Controller
         }
 
         //carregando equipamento
-        $equipamento = $this->loadEquipamento($request->safe()->only(['equipamento']));
+        $validated = $request->validated();
+
+        $equipamento = $this->loadEquipamento($validated['hostname']);
 
         //registrando computador
-        $validated = $request->validated();
-        unset($validated['equipamento']);
-        $validated['equipamento_id'] = $equipamento->id;
-        $status = Status::create($validated);
+        unset($validated['hostname']);
+        $status = Status::create($request->validated() + [ 'equipamento_id' => $equipamento->id ]);
 
         }
 
-    private function loadEquipamento($request_equipamento)
+    private function loadEquipamento($hostname)
     {
-        $equipamento = Equipamento::where('hostname', $request_equipamento)->first();
-        if (!$equipamento) {
-            $equipamento = new Equipamento;
-            $equipamento->hostname = $request_equipamento;
-            $equipamento->save();
-        }
+        $equipamento = Equipamento::firstOrCreate([
+            'hostname' => $hostname
+        ]);
 
         return $equipamento;
     }
