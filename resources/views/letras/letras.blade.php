@@ -17,47 +17,72 @@
       .attr("width", 680)
       .attr("height", 560)
       .attr('stroke', 'black');
-      
-      //mesa 1
-      @include('letras.mesas.mesa1')
-      
-      //mesa 2
-      @include('letras.mesas.mesa2')
-      
-      //mesa 3
-      @include('letras.mesas.mesa3')
-      
-      //mesa 4
-      @include('letras.mesas.mesa4')
-      
-      //mesa 5
-      @include('letras.mesas.mesa5')
-      
-      //mesa 6
-      @include('letras.mesas.mesa6')
 
-      //monitores
+    //mesas de cima
+    for($i = 0; $i < 4; $i++){
+          var rectangle = svgContainer.append("rect")
+          .attr("x", 0 + ($i * 160))
+          .attr("y", 0)
+          .attr('fill', 'white')
+          .attr("width", 120)
+          .attr("height", 200);
+
+                  //computadores
+                  for($x = 0; $x < 2; $x++){
+                        for($y = 0; $y < 4; $y++){    
+                              //computadores
+                              var circle = svgContainer.append('circle')
+                              .attr('cx', (30 + ($x * 50) + ($i * 160)))
+                              .attr('cy', (25 + ($y * 50)))
+                              .attr('r', 13)
+                              .attr('stroke', 'black')
+                              .attr('fill', 'red');
+                        }
+                  }
+    }
+
+    //mesas de baixo
+    for($i = 0; $i < 2; $i++){
+          var rectangle = svgContainer.append("rect")
+          .attr("x", 320 + (160 * $i))
+          .attr("y", 360)
+          .attr('fill', 'white')
+          .attr("width", 120)
+          .attr("height", 200);
+
+                  //computadores
+                  for($x = 0; $x < 2; $x++){
+                        for($y = 0; $y < 4; $y++){
+                              var circle = svgContainer.append('circle')
+                              .attr('cx', 355 + ($x * 50) + ($i * 160))
+                              .attr('cy', 390 + ($y * 50))
+                              .attr('r', 13)
+                              .attr('stroke', 'black')
+                              .attr('fill', 'red');
+                        }
+                  }
+    }
+      
+      @include('letras.mesas.mesa1')
+      @include('letras.mesas.mesa2')
+      @include('letras.mesas.mesa3')
+      @include('letras.mesas.mesa4')
+      @include('letras.mesas.mesa5')
+      @include('letras.mesas.mesa6')
       @include('letras.mesas.monitores')
       
-      //impressora
+    //Impressora
     var rectangle = svgContainer.append("rect")
       .attr("x", 120)
       .attr("y", 360)
       .attr('fill', 'purple')
-      .attr("width", 40)
-      .attr("height", 80)
-      .attr('stroke', 'black');
+      .attr("width", 50)
+      .attr("height", 50);
 
     var text = svgContainer.append('text')
       .attr('x', 200)
       .attr('y', 550)
       .text('Porta');
-      
-    var text = svgContainer.append('text')
-      .attr('x', 160)
-      .attr('y', 350)
-      .text('Impressora');
-      
 
   </script>
 

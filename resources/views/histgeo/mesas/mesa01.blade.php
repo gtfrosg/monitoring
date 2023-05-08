@@ -12,31 +12,6 @@
       .text('MESA 01')
       .attr ('fill', 'black');    
 
-     //pcs
-     //01
-     var circle = svgContainer.append('circle')
-      .attr('cx', 80)
-      .attr('cy', 400)
-      .attr('r', 10)
-      .attr('stroke', 'black')
-     @if(empty($mesa1_equipamento1->username)) 
-      .attr('fill', 'green');
-     @else
-      .attr('fill', 'red');
-     @endif
-    
-     //02
-    var circle = svgContainer.append('circle')
-      .attr('cx', 160)
-      .attr('cy', 400)
-      .attr('r', 10)
-      .attr('stroke', 'black')
-      @if(empty($mesa1_equipamento1->username)) 
-      .attr('fill', 'green');
-     @else
-      .attr('fill', 'red');
-     @endif
-
      //n pcs
     var text = svgContainer.append('text')
       .attr('x', 80)
@@ -51,3 +26,30 @@
       .text('2')
       .attr("text-anchor", "middle")
       .attr ('fill', 'white');  
+
+
+      //pc1
+    var circle = svgContainer.append('circle')
+      .attr('cx', 80)
+      .attr('cy', 400)
+      .attr('r', 13)
+      .attr('stroke', 'black')
+      .attr('fill', 'white')
+    @if(empty($mesa1_equipamento1->username))
+            .attr('fill', 'red')
+    @else
+            .attr('fill', 'green');
+    @endif
+
+      //pc2
+    var circle = svgContainer.append('circle')
+      .attr('cx', 160)
+      .attr('cy', 400)
+      .attr('r', 13)
+      .attr('stroke', 'black')
+      .attr('fill', 'white')
+    @if(empty($mesa1_equipamento2->username))
+            .attr('fill', 'red')
+    @else
+            .attr('fill', 'green');
+    @endif

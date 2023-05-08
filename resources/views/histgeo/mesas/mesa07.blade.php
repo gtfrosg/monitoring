@@ -1,5 +1,5 @@
       //mesa07
-    var rectangle = svgContainer.append("rect")
+      var rectangle = svgContainer.append("rect")
       .attr("x", 300)
       .attr("y", 40)
       .attr('fill', 'white')
