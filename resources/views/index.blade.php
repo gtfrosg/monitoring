@@ -1,6 +1,10 @@
 @extends('main')
 
 @section('content') 
+
+Bem-vinde ao sistema de monitoramento das pró-aluno da Faculdade de Filosofia, Letras e Ciências Humanas da USP! 
+Para efetuar login, clique em <b>entrar</b> no canto superior direito.
+<!-- 
 <script src="//d3js.org/d3.v4.min.js"></script>
 
 <script>
@@ -407,6 +411,6 @@
       .text('click a circle');
 
 
-  </script>
+  </script> -->
 
 @endsection

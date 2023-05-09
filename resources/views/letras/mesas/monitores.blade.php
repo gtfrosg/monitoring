@@ -1,13 +1,11 @@
-//monitores
-    var rectangle = svgContainer.append("rect")
+  var rectangle = svgContainer.append("rect")
       .attr("x", 0)
       .attr("y", 360)
       .attr('fill', 'white')
       .attr("width", 120)
       .attr("height", 200)
-      .attr('stroke', 'black');
 
-    var text = svgContainer.append('text')
+   var text = svgContainer.append('text')
       .attr('x', 35)
       .attr('y', 350)
       .text('Monitores');

@@ -70,7 +70,12 @@
       .attr("height", 244);
       
      //Impressora
-    @include('histgeo.mesas.impressora')
+     var rectangle = svgContainer.append("rect")
+      .attr("x", 175)
+      .attr("y", 220)
+      .attr('fill', 'purple')
+      .attr("width", 50)
+      .attr("height", 50);
 
      //nomes
     var text = svgContainer.append('text')

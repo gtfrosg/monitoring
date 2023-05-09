@@ -36,19 +36,7 @@ $submenu2 = [
 ];
 
 $menu = [
-    [
-        'text' => '<i class="fas fa-home"></i> Home',
-        'url' => 'home',
-    ],
-    [
-        # este item de menu será substituido no momento da renderização
-        'key' => 'menu_dinamico',
-    ],
-    [
-        'text' => 'Drop Down',
-        'submenu' => $submenu2,
-        'can' => '',
-    ],
+    /*
     [
         'text' => 'Está logado',
         'url' => config('app.url') . '/logado', // com caminho absoluto
@@ -64,6 +52,7 @@ $menu = [
         'submenu' => $admin,
         'can' => 'admin',
     ],
+    */
     [
         'text' => 'Equipamentos',
         'can' => 'admin',
