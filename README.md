@@ -20,7 +20,7 @@ Exemplo de requisição de dentro da máquina virtual para a máquina 192.168.40
 ```sh
    curl --header "Authorization: 123"         \
      -H "Content-Type: application/json"      \
-     -X POST http://192.168.40.1:8000/api/status  \
+     -X POST http://127.0.0.1:8000/api/status  \
      -d '{
             "username": "123456",
             "hostname": "linux008029845",
@@ -39,7 +39,7 @@ ip=$(ip a | grep inet | grep eth1 | cut -d' ' -f6 | cut -d'/' -f1)
 
 curl --header "Authorization: 123"         \
      -H "Content-Type: application/json"      \
-     -X POST http://192.168.40.1:8000/api/status  \
+     -X POST http://127.0.0.1:8000/api/status  \
      -d "{
           \"hostname\": \"$hostname\",
           \"ip\": \"$ip\",
