@@ -1,5 +1,7 @@
 <?php
 
+// Esse controller especial associado com a rota status no arquivo api.php foi criado através do comando php artisan make:controller NomeController --api
+
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;

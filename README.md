@@ -48,4 +48,17 @@ curl --header "Authorization: 123"         \
          }"
 ```
 
+Exemplo feito com ricardo:
+```sh
+curl --header "Authorization: 123"         \
+     -H "Content-Type: application/json"      \
+     -X POST http://127.0.0.1:8000/api/status  \
+     -d "{
+          \"hostname\": \"008.044821\",
+          \"ip\": \"10.10.10.1\",
+          \"username\": \"brunao\",
+           \"login_at\": \"2010-09-20 12:15\"
+         }"
+```
 
+lembre que para funcionar é necessario adicionar na linha 'APP_URL=' do arquivo .env o ip correto 127.0.0.1:8000
