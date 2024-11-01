@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Status extends Model
 {
     use Hasfactory;
+
     protected $fillable = [
-	  'hostname',
-	  'ip',
-	  'username',
-	  'login_at'
+        'hostname',
+        'ip',
+        'username',
+        'login_at'
     ];
 }
