@@ -9,7 +9,7 @@ class ConsultaController extends Controller
 {
     public function index(){
 	$status = Status::all();
-	return view('index',[
+	return view('status.index',[
 	    'status' => $status
 	]);
     }
