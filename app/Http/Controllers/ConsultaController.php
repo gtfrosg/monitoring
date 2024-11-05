@@ -8,9 +8,8 @@ use App\Models\Status;
 class ConsultaController extends Controller
 {
     public function index(){
-	$status = Status::all();
-	return view('status.index',[
-	    'status' => $status
-	]);
+        return view('index',[
+            'status' => Status::all()
+        ]);
     }
 }

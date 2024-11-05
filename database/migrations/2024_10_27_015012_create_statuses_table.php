@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('statuses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-	    $table->string('hostname')->nullable();
-	    $table->string('ip')->nullable();
-	    $table->string('username')->nullable();
-	    $table->timestamp('login_at')->nullable();
+            $table->string('hostname')->nullable();
+            $table->string('ip')->nullable();
+            $table->string('username')->nullable();
+            $table->timestamp('login_at')->nullable();
         });
     }
 
