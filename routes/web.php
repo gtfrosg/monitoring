@@ -1,6 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ConsultaController;
+use App\Http\Controllers\StatusController;
 
-Route::get('index', [ConsultaController::class,'index']);
+Route::get('index', [StatusController::class,'index']);
