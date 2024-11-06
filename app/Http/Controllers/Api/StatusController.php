@@ -15,6 +15,9 @@ class StatusController extends Controller
         $status->ip = $request->ip;
         $status->username = $request->username;
         $status->login_at = $request->login_at;
+	$status->teclado = $request->teclado;
+	$status->mouse = $request->mouse;
+	$status->monitor = $request->monitor;
         $status->save();
         return response()->json(["ok" => true, "status" => $status], 201);
     }

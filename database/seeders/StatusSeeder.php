@@ -17,7 +17,10 @@ class StatusSeeder extends Seeder
             'hostname' => "linux008123456",
             'ip'       => "10.172.1.130",
             'username' => "a12289004",
-            'login_at' => "2024-10-27 15:30:00"
+            'login_at' => "2024-10-27 15:30:00",
+	    'teclado'  => "TecladoMultilazerFerradoDe100anos",
+	    'mouse'    => "MouseMultilazerFerradoDe100anos",
+	    'monitor'  => "MonitorDaSangungVagabundo"
         ];
         \App\Models\Status::create($status);
         \App\Models\Status::factory(15)->create();

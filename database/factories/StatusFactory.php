@@ -22,6 +22,9 @@ class StatusFactory extends Factory
 	   'ip'       => $this->faker->ipv4(),
     	   'username' => $this->faker->userName(),
 	   'login_at' => Carbon::now()->subDays(rand(0, 30)),
+	   'teclado'  => $this->faker->randomElement(['Logitech', 'Corsair', 'Razer', 'Microsoft', 'HP', 'Dell']),
+	   'mouse'    => $this->faker->randomElement(['Logitech', 'Razer', 'Microsoft', 'SteelSeries', 'HP', 'Dell']),
+	   'monitor'  => $this->faker->randomElement(['Samsung', 'LG', 'Dell', 'AOC', 'Asus', 'BenQ'])
         ];
     }
 }

@@ -82,7 +82,7 @@ ip=$(ip a | grep inet | grep eth1 | cut -d' ' -f6 | cut -d'/' -f1)
 #agora vamos tentar armazenar as informações sobre o teclado, mouse e tela
 #do computador respectivamente
 
-teclado=$(/dev/input/by-id | grep -i keyboard)
+teclado=$(ls /dev/input/by-id | grep -i keyboard)
 mouse=$(ls /dev/input/by-id | grep -i mouse)
 #aqui com o mouse temos um problema que o linux (da poha minha maquina pelo
 #menos)retorna dois valores nessa poha um associado ao evento do mouse e outro
@@ -109,4 +109,20 @@ curl --header "Authorization: 123"         \
           \"monitor"\": \"$monitor"
          }"
 
+```
+exemplo feito com octavio
+
+```sh
+curl --header "Authorization: 123"         \
+     -H "Content-Type: application/json"      \
+     -X POST http://127.0.0.1:8000/api/status  \
+     -d "{
+          \"hostname\": \"008.044821\",
+          \"ip\": \"10.10.10.1\",
+          \"username\": \"brunao\",
+          \"login_at\": \"2010-09-20 12:15\",
+          \"teclado\": \"TecladissmoLenovo\",
+          \"mouse\": \"MoussissimoMultilazer\",
+          \"monitor\": \"MonitorissimoSansung\"
+         }"
 ```
