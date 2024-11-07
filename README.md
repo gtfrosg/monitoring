@@ -110,7 +110,7 @@ curl --header "Authorization: 123"         \
          }"
 
 ```
-exemplo feito com octavio
+exemplo de curl feito sob influencia octavio
 
 ```sh
 curl --header "Authorization: 123"         \
@@ -125,4 +125,90 @@ curl --header "Authorization: 123"         \
           \"mouse\": \"MoussissimoMultilazer\",
           \"monitor\": \"MonitorissimoSansung\"
          }"
+```
+
+Eu fiz um monte de coisa na minha maquina pessoal para tentar fazer um script que procura capturar numa variável o estado de uma veriável e armazenar numa variável o estado da tela de bloqueio no cinnamon:
+
+1: instale os pacotes que fazem o comando funcionar
+```sh
+sudo apt update
+sudo apt install dbus-x11
+```
+2: Definir a variável de ambiente DBUS_SESSION_BUS_ADDRESS: Após a instalação, você precisa configurar a variável de ambiente que permite que o sistema acesse o barramento de sessão D-Bus. Execute o comando abaixo para configurá-la:
+```sh
+export $(dbus-launch)
+```
+3: (opcional) Verificar se a váriável de ambiente foi configurada corretamente:
+```sh
+echo $DBUS_SESSION_BUS_ADDRESS
+```
+Ele deve devolver algo como isso aqui:
+
+unix:path=/tmp/dbus-LLuEMsqqg0,guid=a5cfb93ce0d8c86dec45163b672c3147
+
+4: A partir de agora você será capaz de executar o comando do cinnamon que descobre se a tela está ativa ou inativa. Então execute:
+
+```sh
+cinnamon-screensaver-command -q
+```
+Se a resposta for "A proteção de tela está inativa", significa que a tela não está bloqueada.
+Se a resposta for "A proteção de tela está ativa", significa que a tela está bloqueada.
+
+
+5: A partir de agora tentamos montar um script que atribua o valor a variável logged_at que caso o retorno do comando cinnamon-screensaver-command -q seja A proteção de tela está ativa e outro valor caso a proteção de tela não esteja ativa
+```sh
+StatusTelaBloqueio=$(cinnamon-screensaver-command -q)
+
+if [[ "$StatusTelaBloqueio" == "A proteção de tela está ativa" ]]; then
+    logged_at="o usuario não deslogou"  # A tela de bloqueio está ativa então e o usuario esqueceu de deslogar
+else
+    logged_at=$(last -x | grep 'still logged in' -v | head -n 1 | awk '{print $6, $7, $8, $9}') # A tela foi bloqueada, então o usuário não deslogou
+fi
+
+```
+
+6: Se quiser checar o valor da variável logged_at você pode executar a seguinte linha de comando:
+
+```sh
+
+echo $logged_at
+
+```
+
+6: Agora que conseguimos atribuir valores para variáveis locais evitando os problemas podemos tentar incluir ele a variável naquele exemplo acima que coleta um pouco mais de dados
+#lembrando que só vai funcionar todos os comandos se tiver conseguido seguir cada um desses passos
+#E quando rodar o comando no computador não esqueça de adptar um pouco os comando pq do jeito que estão é provavel que apareça algo em branco
+
+```sh
+who=$(who | grep -w tty7)
+name=$(echo $who | cut -d' ' -f1)
+data=$(echo $who | cut -d' ' -f3)
+hora=$(echo $who | cut -d' ' -f4)
+hostname=$(hostname)
+ip=$(ip a | grep inet | grep eth1 | cut -d' ' -f6 | cut -d'/' -f1)
+teclado=$(ls /dev/input/by-id | grep -i keyboard)
+mouse=$(ls /dev/input/by-id | grep -i 'mouse' | grep -v 'event')
+monitor=$(xrandr | grep ' connected')
+StatusTelaBloqueio=$(cinnamon-screensaver-command -q)
+if [[ "$StatusTelaBloqueio" == "A proteção de tela está ativa" ]]; then
+    logged_at="o usuario não deslogou"  # A tela de bloqueio está ativa então e o usuario esqueceu de deslogar
+else
+    logged_at=$(last -x | grep 'still logged in' -v | head -n 1 | awk '{print $6, $7, $8, $9}') # A tela foi bloqueada, então o usuário não deslogou
+fi
+
+
+curl --header "Authorization: 123"         \
+     -H "Content-Type: application/json"      \
+     -X POST http://127.0.0.1:8000/api/status  \
+     -d "{
+          \"hostname\": \"$hostname\",
+          \"ip\": \"$ip\",
+          \"username\": \"$name\",
+          \"login_at\": \"$data $hora\"
+          \"teclado"\": \"$teclado"
+          \"mouse"\": \"$mouse"
+          \"monitor"\": \"$monitor",
+          \"logged_at"\": \"$logged_at"
+         }"
+
 ```
