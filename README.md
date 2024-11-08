@@ -204,11 +204,11 @@ curl --header "Authorization: 123"         \
           \"hostname\": \"$hostname\",
           \"ip\": \"$ip\",
           \"username\": \"$name\",
-          \"login_at\": \"$data $hora\"
-          \"teclado"\": \"$teclado"
-          \"mouse"\": \"$mouse"
-          \"monitor"\": \"$monitor",
-          \"logged_at"\": \"$logged_at"
+          \"login_at\": \"$data $hora\",
+          \"teclado\": \"$teclado\",
+          \"mouse\": \"$mouse\",
+          \"monitor\": \"$monitor\",
+          \"logged_at\": \"$logged_at\"
          }"
 
 ```
