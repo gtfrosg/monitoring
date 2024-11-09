@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>@section('title') status </title>
+        <title>@section('title') monitorin </title>
     </head>
     <body>
 	@section('content') @show
