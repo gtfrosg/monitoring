@@ -22,7 +22,9 @@ class SalaController extends Controller
      */
     public function create()
     {
-        return view('salas.create');
+	return view('salas.create', [
+	    'sala' => new Sala
+	]);
     }
 
     /**
@@ -30,15 +32,23 @@ class SalaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sala = new Sala;
+	$sala->nome = $request->nome;
+	$sala->largura = $request->largura;
+	$sala->profundidade = $request->profundidade;
+	$sala->save();
+	return redirect('/salas/index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Sala $sala)
+    public function show($nome)
     {
-        //
+	$sala = Sala::where('nome',$nome)->first();
+	 return view('salas.show',[
+	    'sala' => $sala
+    ]);
     }
 
     /**
@@ -46,7 +56,9 @@ class SalaController extends Controller
      */
     public function edit(Sala $sala)
     {
-        //
+        return view('salas.edit', [
+	    'sala' => $sala
+	]);
     }
 
     /**
@@ -54,7 +66,11 @@ class SalaController extends Controller
      */
     public function update(Request $request, Sala $sala)
     {
-        //
+	$sala->nome = $request->titulo;
+	$sala->largura = $request->largura;
+	$sala->profundidade = $request->profundidade;
+	$sala->save();
+	return redirect('/salas/index');
     }
 
     /**
@@ -62,6 +78,7 @@ class SalaController extends Controller
      */
     public function destroy(Sala $sala)
     {
-        //
+        $sala->delete();
+	return redirect('/salas/index');
     }
 }

@@ -9,11 +9,11 @@ Route::get('status/index', [StatusController::class,'index']);
 //Rotas para salas
 Route::get('salas/index', [SalaController::class,'index']);
 Route::get('salas/create', [SalaController::class,'create']);
-Route::post('store');
-Route::get('show');
-Route::get('edit');
-Route::put('update');
-Route::delete('delete');
+Route::post('salas/store', [SalaController::class,'store']);
+Route::get('salas/show/{nome}', [SalaController::class,'show']);
+Route::get('salas/edit/{sala}', [SalaController::class,'edit']);
+Route::patch('salas/update/{sala}', [SalaController::class,'update']);
+Route::delete('salas/delete/{sala}', [SalaController::class,'destroy']);
 
 //Rotas para mesas
 
