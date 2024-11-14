@@ -1,4 +1,4 @@
-Exemplo de requisição via shell da mesma máquina que está o laravel:
+- Exemplo de requisição via shell da mesma máquina que está o laravel:
 
 ```sh
    curl --header "Authorization: 123"         \
@@ -15,7 +15,7 @@ Subindo server para escutar de todos ips da máquina:
 
     php artisan serve --host=0.0.0.0:8000
 
-Exemplo de requisição de dentro da máquina virtual para a máquina 192.168.40.1:
+- Exemplo de requisição de dentro da máquina virtual para a máquina 192.168.40.1:
 
 ```sh
    curl --header "Authorization: 123"         \
@@ -27,7 +27,7 @@ Exemplo de requisição de dentro da máquina virtual para a máquina 192.168.40
             "login_at": "2010-09-20 12:15"
           }'              
 ```
-Exemplo de script que coleta quem está logado:
+- Exemplo de script que coleta quem está logado:
 
 ```sh
 who=$(who | grep -w tty7)
@@ -48,7 +48,7 @@ curl --header "Authorization: 123"         \
          }"
 ```
 
-Exemplo feito com ricardo:
+- Exemplo feito com ricardo:
 ```sh
 curl --header "Authorization: 123"         \
      -H "Content-Type: application/json"      \
@@ -65,7 +65,7 @@ lembre que para funcionar é necessario adicionar na linha 'APP_URL=' do arquivo
 
 
 
-Outro exemplo de script que coleta os dados de quem está logado só que coleta um pouco mais de informações
+- Outro exemplo de script que coleta os dados de quem está logado só que coleta um pouco mais de informações
 ```sh
 who=$(who | grep -w tty7)
 name=$(echo $who | cut -d' ' -f1)
@@ -110,7 +110,7 @@ curl --header "Authorization: 123"         \
          }"
 
 ```
-exemplo de curl feito sob influencia octavio
+- exemplo de curl feito sob influencia octavio
 
 ```sh
 curl --header "Authorization: 123"         \
@@ -127,7 +127,7 @@ curl --header "Authorization: 123"         \
          }"
 ```
 
-Eu fiz um monte de coisa na minha maquina pessoal para tentar fazer um script que procura capturar numa variável o estado de uma veriável e armazenar numa variável o estado da tela de bloqueio no cinnamon:
+- Eu fiz um monte de coisa na minha maquina pessoal para tentar fazer um script que procura capturar numa variável o estado de uma veriável e armazenar numa variável o estado da tela de bloqueio no cinnamon:
 
 1: instale os pacotes que fazem o comando funcionar
 ```sh
@@ -212,3 +212,5 @@ curl --header "Authorization: 123"         \
          }"
 
 ```
+
+- Agora nós vamos mudar o script. Vamos adicionar o campo dos fones de ouvido e remover o logged-at pois isso está causando muitos problemas e vamos encontrar uma outra forma de descobrir de atribuir a cor azul para os computadores de uma maneira geral para caracteriza-los quando estiverem disponíveis para uso na proaluno.
