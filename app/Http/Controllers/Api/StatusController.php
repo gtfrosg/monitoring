@@ -18,7 +18,6 @@ class StatusController extends Controller
 	$status->teclado = $request->teclado;
 	$status->mouse = $request->mouse;
 	$status->monitor = $request->monitor;
-	$status->logged_at = $request->logged_at;
         $status->save();
         return response()->json(["ok" => true, "status" => $status], 201);
     }

@@ -20,8 +20,7 @@ class StatusSeeder extends Seeder
             'login_at' => "2024-10-27 15:30:00",
 	    'teclado'  => "TecladoMultilazerFerradoDe100anos",
 	    'mouse'    => "MouseMultilazerFerradoDe100anos",
-	    'monitor'  => "MonitorDaSangungVagabundo",
-	    'logged_at'=> "Sat May 4 16:24"
+	    'monitor'  => "MonitorDaSangungVagabundo"
         ];
         \App\Models\Status::create($status);
         \App\Models\Status::factory(15)->create();

@@ -16,7 +16,6 @@ class Status extends Model
         'login_at',
 	'teclado',
 	'mouse',
-	'monitor',
-	'logged_at'
+	'monitor'
     ];
 }

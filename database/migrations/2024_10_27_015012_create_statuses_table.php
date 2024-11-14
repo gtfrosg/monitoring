@@ -21,7 +21,6 @@ return new class extends Migration
 	    $table->string('teclado')->nullable();
 	    $table->string('mouse')->nullable();
 	    $table->string('monitor')->nullable();
-	    $table->string('logged_at')->nullable();
         });
     }
 

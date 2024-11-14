@@ -25,7 +25,6 @@ class StatusFactory extends Factory
 	   'teclado'  => $this->faker->randomElement(['Logitech', 'Corsair', 'Razer', 'Microsoft', 'HP', 'Dell']),
 	   'mouse'    => $this->faker->randomElement(['Logitech', 'Razer', 'Microsoft', 'SteelSeries', 'HP', 'Dell']),
 	   'monitor'  => $this->faker->randomElement(['Samsung', 'LG', 'Dell', 'AOC', 'Asus', 'BenQ']),
-	   'logged_at'=> $this->faker->dateTime->format('D M j H:i')
         ];
     }
 }
