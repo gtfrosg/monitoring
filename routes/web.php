@@ -17,10 +17,10 @@ Route::delete('salas/delete/{sala}', [SalaController::class,'destroy']);
 
 //Rotas para mesas
 
-Route::get('index');
-Route::get('create');
-Route::post('store');
-Route::get('show');
-Route::get('edit');
-Route::put('update');
-Route::delete('delete');
+//Route::get('index');
+//Route::get('create');
+//Route::post('store');
+//Route::get('show');
+//Route::get('edit');
+//Route::put('update');
+//Route::delete('delete');
