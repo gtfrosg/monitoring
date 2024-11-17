@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sala;
+use App\Models\Mesa;
 use Illuminate\Http\Request;
 
 class SalaController extends Controller
@@ -43,11 +44,14 @@ class SalaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($nome)
+    public function show($id)
     {
-	$sala = Sala::where('nome',$nome)->first();
+	// ele carrega todas as mesas associadas com o id da sala em especifico
+	$sala = Sala::with('Mesa')->findOrFail($id);
+	dd($sala->mesas);
 	 return view('salas.show',[
-	    'sala' => $sala
+	    'sala' => $sala,
+	    'mesa' => $sala->mesas
     ]);
     }
 
