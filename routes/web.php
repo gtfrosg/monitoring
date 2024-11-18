@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\SalaController;
 use App\Http\Controllers\MesaController;
+use App\Http\Controllers\TesteController;
 
 Route::get('status/index', [StatusController::class,'index']);
 
@@ -25,3 +26,7 @@ Route::post('mesas/store', [MesaController::class,'store']);
 Route::get('mesas/edit/{mesa}',[MesaController::class,'edit']);
 Route::patch('mesas/update/{mesa}', [MesaController::class,'update']);
 Route::delete('mesas/delete/{mesa}', [MesaController::class,'destroy']);
+
+
+//teste pq não funciona
+Route::get('1', [TesteController::class,'index']);
