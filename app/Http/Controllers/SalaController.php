@@ -46,12 +46,11 @@ class SalaController extends Controller
      */
     public function show($id)
     {
-	// ele carrega todas as mesas associadas com o id da sala em especifico
+	// ele carrega todas as mesas associadas com o id da sala em especifico é um comando poderoso e preciso guardar ele
 	$sala = Sala::with('Mesa')->findOrFail($id);
-	dd($sala->mesas);
 	 return view('salas.show',[
 	    'sala' => $sala,
-	    'mesa' => $sala->mesas
+	    'mesa' => $sala->mesa
     ]);
     }
 
