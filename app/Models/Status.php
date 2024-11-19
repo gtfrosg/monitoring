@@ -13,6 +13,9 @@ class Status extends Model
         'hostname',
         'ip',
         'username',
-        'login_at'
+        'login_at',
+	'teclado',
+	'mouse',
+	'monitor'
     ];
 }

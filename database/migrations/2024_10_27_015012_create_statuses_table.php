@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('ip')->nullable();
             $table->string('username')->nullable();
             $table->timestamp('login_at')->nullable();
+	    $table->string('teclado')->nullable();
+	    $table->string('mouse')->nullable();
+	    $table->string('monitor')->nullable();
         });
     }
 

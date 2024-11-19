@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Status;
 
-class ConsultaController extends Controller
+class StatusController extends Controller
 {
     public function index(){
-        return view('index',[
+        return view('status.index',[
             'status' => Status::all()
         ]);
     }
