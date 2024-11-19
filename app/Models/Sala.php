@@ -1,18 +1,19 @@
 <?php
 
 namespace App\Models;
+use App\Models\Mesa;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Sala extends Model
 {
-    public function Mesa()
-    {
-	return $this->hasMany(Mesa::class);
-    }
     protected $fillable =
     [
         'nome','largura','profundidade'
     ];
 
+    public function mesas()
+    {
+	return $this->hasMany(Mesa::class);
+    }
 }

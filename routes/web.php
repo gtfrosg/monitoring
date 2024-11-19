@@ -12,7 +12,7 @@ Route::get('status/index', [StatusController::class,'index']);
 Route::get('salas/index', [SalaController::class,'index']);
 Route::get('salas/create', [SalaController::class,'create']);
 Route::post('salas/store', [SalaController::class,'store']);
-Route::get('salas/show/{id}', [SalaController::class,'show']);
+Route::get('salas/show/{sala}', [SalaController::class,'show']);
 Route::get('salas/edit/{sala}', [SalaController::class,'edit']);
 Route::patch('salas/update/{sala}', [SalaController::class,'update']);
 Route::delete('salas/delete/{sala}', [SalaController::class,'destroy']);

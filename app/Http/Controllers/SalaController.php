@@ -44,13 +44,10 @@ class SalaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Sala $sala)
     {
-	// ele carrega todas as mesas associadas com o id da sala em especifico é um comando poderoso e preciso guardar ele
-	$sala = Sala::with('Mesa')->findOrFail($id);
 	 return view('salas.show',[
 	    'sala' => $sala,
-	    'mesa' => $sala->mesa
     ]);
     }
 
@@ -69,7 +66,7 @@ class SalaController extends Controller
      */
     public function update(Request $request, Sala $sala)
     {
-	$sala->nome = $request->titulo;
+	$sala->nome = $request->nome;
 	$sala->largura = $request->largura;
 	$sala->profundidade = $request->profundidade;
 	$sala->save();
