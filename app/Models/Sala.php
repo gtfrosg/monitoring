@@ -3,6 +3,7 @@
 namespace App\Models;
 use App\Models\Mesa;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Sala extends Model

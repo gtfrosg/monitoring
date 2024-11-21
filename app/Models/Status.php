@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Equipamento;
 
 class Status extends Model
 {
@@ -14,8 +15,13 @@ class Status extends Model
         'ip',
         'username',
         'login_at',
-	'teclado',
+	'keyboard',
 	'mouse',
 	'monitor'
     ];
+
+    public function Equipamento()
+    {
+	return $this->hasMany(Equipamento::class);
+    }
 }

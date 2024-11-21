@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\SalaController;
 use App\Http\Controllers\MesaController;
-use App\Http\Controllers\TesteController;
+use App\Http\Controllers\EquipamentoController;
 
 Route::get('status/index', [StatusController::class,'index']);
 
@@ -27,6 +27,12 @@ Route::get('mesas/edit/{mesa}',[MesaController::class,'edit']);
 Route::patch('mesas/update/{mesa}', [MesaController::class,'update']);
 Route::delete('mesas/delete/{mesa}', [MesaController::class,'destroy']);
 
+//Rotas para equipamentos
 
-//teste pq não funciona
-Route::get('1', [TesteController::class,'index']);
+Route::get('equipamentos/index', [EquipamentoController::class,'index']);
+Route::get('equipamentos/create', [EquipamentoController::class,'create']);
+Route::post('equipamentos/store', [EquipamentoController::class,'store']);
+//Route::get('show');
+Route::get('equipamentos/edit/{equipamento}', [EquipamentoController::class,'edit']);
+Route::patch('equipamentos/update/{equipamento}', [EquipamentoController::class,'update']);
+Route::delete('equipamentos/delete/{equipamento}', [EquipamentoController::class,'destroy']);

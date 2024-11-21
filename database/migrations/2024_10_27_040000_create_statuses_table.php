@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('statuses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+    	    $table->foreignId('equipamento_id')->constrained('equipamentos')->onDelete('cascade'); // Associa um status a um equipamento
             $table->string('hostname')->nullable();
             $table->string('ip')->nullable();
             $table->string('username')->nullable();
             $table->timestamp('login_at')->nullable();
-	    $table->string('teclado')->nullable();
+	    $table->string('keyboard')->nullable();
 	    $table->string('mouse')->nullable();
 	    $table->string('monitor')->nullable();
         });

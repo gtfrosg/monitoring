@@ -1,5 +1,5 @@
 <div>
-    <!-- Acessa os dados de cada mesa usando $sala->mesas | infelizmente não consigo passar uma variavel chamada mesas para ficar mais bonitinho -->
+    <!-- Acessa os dados de cada mesa usando $sala->mesas -->
   <h1>Aqui temos as mesas</h1> 
   <br>
   @foreach ($sala->mesas as $mesa)
