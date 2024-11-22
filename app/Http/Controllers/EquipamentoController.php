@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipamento;
+use App\Models\Mesa;
+use App\Models\Status;
 use Illuminate\Http\Request;
 
 class EquipamentoController extends Controller
@@ -25,7 +27,13 @@ class EquipamentoController extends Controller
      */
     public function create()
     {
-        //
+	$mesas = Mesa::all();
+	$status = Status::all();
+        return view('equipamentos.create', [
+	    'equipamento' => new Equipamento,
+	    'mesas' => $mesas,
+	    'status' => $status
+	]);
     }
 
     /**
@@ -33,7 +41,17 @@ class EquipamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $equipamento = new Equipamento;
+	$equipamento->mesa_id = $request->mesa_id;
+	$equipamento->save();
+
+	//aqui eu tive uma ideia pq quando o usuario criar um novo equipamento ele deve associar esse equipamento a um status especifico. E eu não consegui fazer com que o formulario seja enviado para a rota do método store e a rota do método update (no StatusController) simultaneamente. Então eu vou colocar um redirecionamento para a rota do método update do StatusController aqui no corpo da função store
+	//basicamente estou armazenando o id do equipamento numa variável e levando ele até o método update lá no StatusController onde ele vai atualizar o campo equipamento_id isso garante que pelo menos (por enquanto) cada equipamento seja associado a apenas um status
+	$equipamento_id = $equipamento->id;
+	return redirect()->route('status.update', [
+	    'equipamento_id' => $equipamento_id
+	]);
+	//ATENÇÃO AINDA NÃO ESTÁ FUNCIONANDO
     }
 
     /**

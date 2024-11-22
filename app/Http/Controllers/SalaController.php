@@ -64,7 +64,7 @@ class SalaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Sala $sala)
+    public function update($Status_id)
     {
 	$sala->nome = $request->nome;
 	$sala->largura = $request->largura;

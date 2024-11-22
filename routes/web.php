@@ -6,7 +6,9 @@ use App\Http\Controllers\SalaController;
 use App\Http\Controllers\MesaController;
 use App\Http\Controllers\EquipamentoController;
 
+//rotas para status
 Route::get('status/index', [StatusController::class,'index']);
+Route::patch('status/update/{$equipamento_id}', [StatusController::class, 'update'])->name('status.update'); //aparentemente preciso nomear senão o redirect não funciona
 
 //Rotas para salas
 Route::get('salas/index', [SalaController::class,'index']);
