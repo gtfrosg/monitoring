@@ -17,7 +17,7 @@ class StatusController extends Controller
     public function update($equipamento_id)
     {
 	dd('você chegou no update do StatusController');
-	$equipamento_id = $request->equipamento_id;
+//	$equipamento_id = $request->equipamento_id;
 	return redirect('/equipamentos/index');
 
     }
